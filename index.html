@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora M/M/1</title>
+    <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+
+    <h1>Calculadora M/M/1</h1>
+    
+    <label for="lambda">Taxa de Chegada (λ):</label>
+    <input type="number" id="lambda" step="any">
+
+    <label for="lambdaUnit">Unidade de λ:</label>
+    <select id="lambdaUnit">
+        <option value="ph">Pessoas por hora (p/h)</option>
+        <option value="pm">Pessoas por minuto (p/m)</option>
+    </select>
+
+    <label for="mu">Taxa de Serviço (μ):</label>
+    <input type="number" id="mu" step="any">
+
+    <label for="muUnit">Unidade de μ:</label>
+    <select id="muUnit">
+        <option value="hours">Horas</option>
+        <option value="minutes">Minutos</option>
+    </select>
+
+    <label for="operation">Selecione a Operação:</label>
+    <select id="operation" onchange="toggleValueInput()">
+        <option value="l">Número médio de clientes no sistema (L)</option>
+        <option value="lq">Número médio de clientes na fila (Lq)</option>
+        <option value="wq">Tempo médio de espera na fila (Wq)</option>
+        <option value="w">Tempo médio gasto no sistema por cliente (W)</option>
+        <option value="pn">Probabilidade de ter "n" clientes no sistema (P(n))</option>
+        <option value="pnk">Probabilidade de ter mais de "k" clientes no sistema (P(n > k))</option>
+    </select>
+
+    <div id="valueInput" class="hidden">
+        <label for="value">Valor de "n" ou "k":</label>
+        <input type="number" id="value" step="any">
+    </div>
+
+    <button onclick="calculate()">Calcular</button>
+
+    <div class="result" id="result"></div>
+
+    <h2 class="credits">Equipe: Ana Beatriz Pessoa, Carlos Araújo, Lucas Dawis, Janyne Soares.</h2>
+    
+    <script src="script.js"></script>
+</body>
+</html>
